@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.mainExp-container {
+  width: 100%;
+}
+
+/* use grid for 3-split screen */
+.mainExp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+}
+.left-display, .center-display, .right-display {
+  border: dotted red;
+}
+
+/* use flexbox for center display */
+.center-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.tiles {
+  width: 560px;
+  height: 220px;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+#tile-1 {
+  background-color: green;
+}
+#tile-2 {
+  background-color: purple;
+}
+#tile-3 {
+  background-color: orange;
+}
+#tile-4 {
+  background-color: gray;
+}
