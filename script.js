@@ -8,8 +8,8 @@ const takeOver = document.getElementById('takeOver');
 let showingMainExp = true;
 
 function showTakeOver() {
-  takeOver.style.display = 'flex';
-  mainExp.style.display = 'none';
+  takeOver.style.opacity = 1;
+  mainExp.style.opacity = 0;
   leftVideo.pause();
   rightVideo.pause();
   showingMainExp = false;
@@ -18,8 +18,8 @@ function showTakeOver() {
 }
 
 function showMainExperience() {
-  takeOver.style.display = 'none';
-  mainExp.style.display = 'grid';
+  takeOver.style.opacity = 0;
+  mainExp.style.opacity = 1;
   leftVideo.play();
   rightVideo.play();
   showingMainExp = true;

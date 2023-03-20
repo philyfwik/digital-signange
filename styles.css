@@ -14,6 +14,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   height: 100vh;
+  opacity: 1;
 }
 
 /* left and right video displays */
@@ -84,5 +85,8 @@
 
 /* for takeover video */
 .takeOver {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
