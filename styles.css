@@ -18,6 +18,15 @@
   border: dotted red;
 }
 
+/* left and right video displays */
+.left-display, .right-display {
+  display: flex;
+  height: 100%;
+}
+#left-video, #right-video {
+  width: 100%;
+}
+
 /* use flexbox for center display */
 .center-display {
   display: flex;
