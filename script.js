@@ -8,8 +8,8 @@ const takeOver = document.getElementById('takeOver');
 let showingMainExp = true;
 
 function showTakeOver() {
-  takeOver.style.visibility = 'visible';
-  //mainExp.style.visibility = 'hidden';
+  takeOver.style.display = 'flex';
+  mainExp.style.display = 'none';
   leftVideo.pause();
   rightVideo.pause();
   showingMainExp = false;
@@ -18,8 +18,8 @@ function showTakeOver() {
 }
 
 function showMainExperience() {
-  takeOver.style.visibility = 'hidden';
-  //mainExp.style.visibility = 'visible';
+  takeOver.style.display = 'none';
+  mainExp.style.display = 'grid';
   leftVideo.play();
   rightVideo.play();
   showingMainExp = true;
@@ -30,7 +30,7 @@ function showMainExperience() {
 // Toggle Displays
 function switchDisplay() {
   if(showingMainExp == true) {
-    setTimeout(showTakeOver, 10000);
+    setTimeout(showTakeOver, 30000);
   } else {
     setTimeout(showMainExperience, 5000);
   }

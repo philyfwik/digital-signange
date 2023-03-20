@@ -57,5 +57,5 @@
 
 /* for takeover video */
 .takeOver {
-  visibility: hidden;
+  display: none;
 }
