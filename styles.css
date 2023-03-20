@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .signage-container {
   width: 100%;
@@ -19,9 +20,34 @@
 .left-display, .right-display {
   display: flex;
   height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 #left-video, #right-video {
   width: 100%;
+}
+.left-overlay, .right-overlay {
+  position: absolute;
+  text-align: center;
+}
+.left-overlay {
+  color: rgb(150, 201, 38);
+}
+.right-overlay {
+  color: rgb(67, 37, 126);
+}
+
+/* for jackpot overlays */
+#number:not(:empty):before {
+  content: '$';
+  font-size: 30%;
+  vertical-align: text-top;
+}
+#number {
+  font-size: 600%;
+}
+#million-or-billion {
+  font-size: 350%;
 }
 
 /* use flexbox for center display */
@@ -41,12 +67,13 @@
   justify-content: center;
   align-items: center;
   border-radius: 7px;
+  font-size: 400%;
 }
 #tile-1 {
-  background-color: green;
+  background-color: rgb(150, 201, 38);
 }
 #tile-2 {
-  background-color: purple;
+  background-color: rgb(67, 37, 126);
 }
 #tile-3 {
   background-color: orange;
