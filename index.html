@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- mainExp-container: main experience container -->
-  <div class="mainExp-container">
-    <div class="mainExp">
+  <!-- signage-container: container for digital signage -->
+  <div class="signage-container" id="signage-container">
+    <!-- for main experience -->
+    <div class="mainExp" id="mainExp">
       <div class="left-display">
         <video src="videos/confetti-8s.mp4" id="left-video" muted autoplay loop></video>
       </div>
@@ -23,6 +24,10 @@
       <div class="right-display">
         <video src="videos/paint-8s.mp4" id="right-video" muted autoplay loop></video>
       </div>
+    </div>
+    <!-- for takeover video -->
+    <div class="takeOver" id="takeOver">
+      <video src="videos/takeover-5s.mp4" id="takeover-video" muted autoplay loop></video>
     </div>
   </div>
 
