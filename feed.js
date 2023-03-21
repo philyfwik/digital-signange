@@ -17,8 +17,11 @@ function removeCommas(str) {
 function formatNum(num) {
   let numLength = num.length;
   // remove decimal if it exists
-  if (num.charAt(numLength - 3) == '.')
+  if (num.charAt(numLength - 3) == '.') {
     num = num.substring(0, numLength - 3);
+    numLength = num.length;
+  }
+
   // return formatted number
   if (numLength < 4) {
     return '$ ' + num;
@@ -80,7 +83,7 @@ function updateFeed() {
   }
 }
 
-// update left overlay
+// update overlays
 function updateOverlays() {
   let lmax = removeCommas(feedInfo.lmax.jackpot), l649 = removeCommas(feedInfo.l649.jackpot);
 
@@ -96,8 +99,6 @@ function updateOverlays() {
     rightOverlay.firstChild.textContent = formatNum(l649);
   }
 }
-
-// update right overlay
 
 // get feed info
 async function getFeed() {
