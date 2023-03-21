@@ -56,29 +56,48 @@ function updateFeed() {
   let lmax = removeCommas(feedInfo.lmax.jackpot), l649 = removeCommas(feedInfo.l649.jackpot), dg = removeCommas(feedInfo.dg.jackpot), scratch = removeCommas(feedInfo.scratch.jackpot);
 
   if (isNaN(lmax) || lmax == 0) {
-    tile1.textContent = '';
+    tile1.textContent = '...';
   } else {
     tile1.textContent = formatNum(lmax);
   }
 
   if (isNaN(l649) || l649 == 0) {
-    tile2.textContent = '';
+    tile2.textContent = '...';
   } else {
     tile2.textContent = formatNum(l649);
   }
 
   if (isNaN(dg) || dg == 0) {
-    tile3.textContent = '';
+    tile3.textContent = '...';
   } else {
     tile3.textContent = formatNum(dg);
   }
 
   if (isNaN(scratch) || scratch == 0) {
-    tile4.textContent = '';
+    tile4.textContent = '...';
   } else {
     tile4.textContent = formatNum(scratch);
   }
 }
+
+// update left overlay
+function updateOverlays() {
+  let lmax = removeCommas(feedInfo.lmax.jackpot), l649 = removeCommas(feedInfo.l649.jackpot);
+
+  if (isNaN(lmax) || lmax == 0) {
+    leftOverlay.firstChild.textContent = '';
+  } else {
+    leftOverlay.firstChild.textContent = formatNum(lmax);
+  }
+
+  if (isNaN(l649) || l649 == 0) {
+    rightOverlay.firstChild.textContent = '';
+  } else {
+    rightOverlay.firstChild.textContent = formatNum(l649);
+  }
+}
+
+// update right overlay
 
 // get feed info
 async function getFeed() {
@@ -88,6 +107,7 @@ async function getFeed() {
     const response = await fetch(feedUrl);
     feedInfo = await response.json();
     updateFeed();
+    updateOverlays();
     console.log(feedInfo);
   } catch(err) {
     console.log('Error Encountered: ' + err);

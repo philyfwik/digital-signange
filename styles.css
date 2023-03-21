@@ -28,30 +28,20 @@
 #left-video, #right-video {
   width: 100%;
 }
+
+/* for jackpot overlays */
 .left-overlay, .right-overlay {
   position: absolute;
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease;
+  font-size: 500%;
 }
 .left-overlay {
   color: rgb(150, 201, 38);
 }
 .right-overlay {
   color: rgb(67, 37, 126);
-}
-
-/* for jackpot overlays */
-#number:not(:empty):before {
-  content: '$';
-  font-size: 30%;
-  vertical-align: text-top;
-}
-#number {
-  font-size: 600%;
-}
-#million-or-billion {
-  font-size: 350%;
 }
 
 /* use flexbox for center display */
